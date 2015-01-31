@@ -30,6 +30,13 @@ public class  AutonomousCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	/*
+    	 * start with claw on bottom of trash can
+    	 * pick up 
+    	 * turn 180
+    	 * move to scoring zone
+    	 * 
+    	 */
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -17,9 +17,9 @@ import org.usfirst.frc692.RecycledRushRobot.Robot;
 /**
  *
  */
-public class  DriveFieldCentric extends Command {
+public class  driveRightAuton extends Command {
 
-    public DriveFieldCentric() {
+    public driveRightAuton() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -35,26 +35,9 @@ public class  DriveFieldCentric extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double x = Robot.oi.driveJoystick.getX();
-    	double y = Robot.oi.driveJoystick.getY();
-    	double rotation = Robot.oi.driveJoystick.getZ();
-    	double gyroAngle = 0.0;
-    	
-    	//double xinvert = x * -1.0;
-    	//double yinvert = y * -1.0;
-    	//double zinvert = rotation * -1.0;
-    	//made inverted variables just in case
-    	//EV 1/16/2015
-    	
-    	Robot.driveTrain.takeJoystickValueGyro(x, y, rotation, gyroAngle);
-    	// takes the new values and put them in for method
-    	// EV 1/16/2015
-    	
-    	System.out.println(x);
-    	System.out.println(y);
-    	System.out.println(rotation);
-    	System.out.println(gyroAngle);
-    	
+    	Robot.driveTrain.moveRight();
+    	// moves robot to the right
+    	// EV 1/30/2015
     }
 
     // Make this return true when this Command no longer needs to run execute()

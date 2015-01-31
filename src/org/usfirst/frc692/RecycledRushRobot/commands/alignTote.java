@@ -50,10 +50,4 @@ public class  alignTote extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
-    /*
-     * plan:
-     * can detect based on what the sensors detect whether to turn CW or CCW 
-     * rotates until three switches on each side are not detecting anything
-     * AC 1/19/15
-     */
 }

@@ -19,9 +19,9 @@ import org.usfirst.frc692.RecycledRushRobot.RobotMap;
 /**
  *
  */
-public class  DriveFrontCentric extends Command {
+public class  DriveWithGyro extends Command {
 
-    public DriveFrontCentric() {
+    public DriveWithGyro() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -33,6 +33,10 @@ public class  DriveFrontCentric extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    }
+
+    // Called repeatedly when this Command is scheduled to run
+    protected void execute() {
     	double x = Robot.oi.driveJoystick.getX();
     	double y = Robot.oi.driveJoystick.getY();
     	double rotation = Robot.oi.driveJoystick.getZ();
@@ -41,8 +45,8 @@ public class  DriveFrontCentric extends Command {
     	//double xinvert = x * -1.0;
     	//double yinvert = y * -1.0;
     	//double zinvert = rotation * -1.0;
-    	// made inverted variables just in case
-    	// EV 1/16/2015
+    	//made inverted variables just in case
+    	//EV 1/16/2015
     	
     	Robot.driveTrain.takeJoystickValueGyro(x, y, rotation, gyroAngle);
     	// takes the new values and put them in for method
@@ -52,10 +56,7 @@ public class  DriveFrontCentric extends Command {
     	System.out.println(y);
     	System.out.println(rotation);
     	System.out.println(gyroAngle);
-    }
-
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

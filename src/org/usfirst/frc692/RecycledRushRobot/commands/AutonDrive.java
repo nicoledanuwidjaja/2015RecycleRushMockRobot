@@ -12,6 +12,7 @@
 package org.usfirst.frc692.RecycledRushRobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc692.RecycledRushRobot.Robot;
 
 /**
@@ -30,8 +31,51 @@ public class  AutonDrive extends Command {
     }
 
     // Called just before this Command runs the first time
+    
     protected void initialize() {
+    	
+        /*
+	for(int i= 0; i < 5000;i++) {
+    	
+    	Robot.driveTrain.robotDrive.mecanumDrive_Cartesian(0.0, 0.5, 0.0, 0.0);
+    	try {
+			Thread.currentThread().sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		for(int x = 0; x < 5000;x++){
+		
+    	Robot.driveTrain.robotDrive.mecanumDrive_Cartesian(0.5, 0.0, 0.0, 0.0);
+    	try {
+			Thread.currentThread().sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		for(int c= 0; c < 5000;c++) {
+		
+    	Robot.driveTrain.robotDrive.mecanumDrive_Cartesian(0.0, -0.5, 0.0, 0.0);
+    	try {
+			Thread.currentThread().sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		for(int v= 0; v < 5000; v++) {
+     	Robot.driveTrain.robotDrive.mecanumDrive_Cartesian(-0.5, 0.0, 0.0, 0.0);
+    	try {
+			Thread.currentThread().sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace(); 
+		}
+		*/
     }
+
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -50,4 +94,5 @@ public class  AutonDrive extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+    
 }

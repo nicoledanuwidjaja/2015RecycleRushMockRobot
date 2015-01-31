@@ -9,15 +9,15 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc692.RecycledRushDriveTrain.commands;
+package org.usfirst.frc692.RecycledRushRobot.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class AutonDrive extends CommandGroup {
+public class AutonGroup extends CommandGroup {
     
-    public  AutonDrive() {
+    public  AutonGroup() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -34,5 +34,19 @@ public class AutonDrive extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	addSequential(new recycleBinClawBottom());
+    	addSequential(new recycleBinClawUp());
+    	//turn 180
+    	addSequential(new DriveForwardAuto());
+    	//move forward
+    	
     }
+    /*
+     * start with claw at bottom of traschan 
+     * pick up trash can 
+     * turn 180 degrees
+     * move forward
+     */
+    
+    
 }

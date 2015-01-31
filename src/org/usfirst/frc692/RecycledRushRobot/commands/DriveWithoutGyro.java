@@ -12,14 +12,15 @@
 package org.usfirst.frc692.RecycledRushRobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc692.RecycledRushRobot.Robot;
 
 /**
  *
  */
-public class  DriveManual extends Command {
+public class  DriveWithoutGyro extends Command {
 
-    public DriveManual() {
+    public DriveWithoutGyro() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -38,20 +39,22 @@ public class  DriveManual extends Command {
     	double x = Robot.oi.driveJoystick.getX();
     	double y = Robot.oi.driveJoystick.getY();
     	double rotation = Robot.oi.driveJoystick.getZ();
+    	double gyroAngle = 0.0;
     	
     	//double xinvert = x * -1.0;
     	//double yinvert = y * -1.0;
     	//double zinvert = rotation * -1.0;
-    	// made inverted variables just in case
-    	// EV 1/16/2015
+    	//made inverted variables just in case
+    	//EV 1/16/2015
     	
-    	Robot.driveTrain.takeJoystickValueDefault(x, y, rotation);
+    	Robot.driveTrain.takeJoystickValueGyro(x, y, rotation, gyroAngle);
     	// takes the new values and put them in for method
     	// EV 1/16/2015
     	
     	System.out.println(x);
     	System.out.println(y);
     	System.out.println(rotation);
+    	System.out.println(gyroAngle);
     	
     }
 
