@@ -58,7 +58,8 @@ public class OI {
     public JoystickButton driveLeft;
     public JoystickButton driveRight;
     public JoystickButton emergencyStop;
-    public JoystickButton gyroButton;
+    public JoystickButton withoutGyroButton;
+    public JoystickButton resetGy;
     public Joystick driveJoystick;
     public JoystickButton buttonOneDispenseAtStep;
     public JoystickButton buttonTwoDispenseAtGround;
@@ -116,8 +117,10 @@ public class OI {
         buttonOneDispenseAtStep.whenPressed(new dispenseAtStep());
         driveJoystick = new Joystick(0);
         
-        gyroButton = new JoystickButton(driveJoystick, 1);
-        gyroButton.whileHeld(new DriveWithGyro());
+        resetGy = new JoystickButton(driveJoystick, 2);
+        resetGy.whenPressed(new resetGyro());
+        withoutGyroButton = new JoystickButton(driveJoystick, 1);
+        withoutGyroButton.whileHeld(new DriveWithoutGyro());
         emergencyStop = new JoystickButton(driveJoystick, 10);
         emergencyStop.whenPressed(new DriveStopAuto());
         driveRight = new JoystickButton(driveJoystick, 12);
@@ -135,9 +138,9 @@ public class OI {
 
         SmartDashboard.putData("AutonDrive", new AutonDrive());
 
-        SmartDashboard.putData("DriveWithGyro", new DriveWithGyro());
-
         SmartDashboard.putData("AutonGroup", new AutonGroup());
+
+        SmartDashboard.putData("DriveWithGyro", new DriveWithGyro());
 
         SmartDashboard.putData("DriveWithoutGyro", new DriveWithoutGyro());
 
@@ -150,6 +153,8 @@ public class OI {
         SmartDashboard.putData("driveRightAuton", new driveRightAuton());
 
         SmartDashboard.putData("DriveStopAuto", new DriveStopAuto());
+
+        SmartDashboard.putData("resetGyro", new resetGyro());
 
         SmartDashboard.putData("alignTote", new alignTote());
 
@@ -192,6 +197,8 @@ public class OI {
         SmartDashboard.putData("elevatorUpWithoutLimitSwitch", new elevatorUpWithoutLimitSwitch());
 
         SmartDashboard.putData("elevatorDownWithoutLimitSwitch", new elevatorDownWithoutLimitSwitch());
+
+        SmartDashboard.putData("rollyGrabbersGo", new rollyGrabbersGo());
 
         SmartDashboard.putData("elevatorStop", new elevatorStop());
 

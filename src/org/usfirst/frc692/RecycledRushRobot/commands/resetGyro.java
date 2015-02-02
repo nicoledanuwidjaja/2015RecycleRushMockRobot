@@ -12,7 +12,6 @@
 package org.usfirst.frc692.RecycledRushRobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc692.RecycledRushRobot.Robot;
 import org.usfirst.frc692.RecycledRushRobot.RobotMap;
@@ -20,9 +19,9 @@ import org.usfirst.frc692.RecycledRushRobot.RobotMap;
 /**
  *
  */
-public class  DriveWithGyro extends Command {
+public class  resetGyro extends Command {
 
-    public DriveWithGyro() {
+    public resetGyro() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -34,45 +33,16 @@ public class  DriveWithGyro extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//RobotMap.driveTraingyro.reset();
-    	SmartDashboard.putNumber("Gyro Angle Init:", RobotMap.driveTraingyro.getAngle());
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double x = Robot.oi.driveJoystick.getX();
-    	double y = Robot.oi.driveJoystick.getY();
-    	double rotation = Robot.oi.driveJoystick.getZ();
-    	double gyroAngle = RobotMap.driveTraingyro.getAngle();
-    	SmartDashboard.putNumber("Gyro Angle Testing:", RobotMap.driveTraingyro.getAngle());
-    	
-    	//double xinvert = x * -1.0;
-    	//double yinvert = y * -1.0;
-    	//double zinvert = rotation * -1.0;
-    	//made inverted variables just in case
-    	//EV 1/16/2015
-    	SmartDashboard.putNumber("Rotation Value Before:", rotation);
-    	if (rotation >= 0.0 && rotation < 0.3)
-    		rotation = 0.0;
-    	else if (rotation <= 0.0 && rotation > -0.3)
-    		rotation = 0.0;
-    	/*
-    	else if (rotation >= 0.3)
-    		rotation = rotation - 0.2;
-    	else if (rotation <= -0.3)
-    		rotation = rotation + 0.2;
-    		*/
-    	// creates a deadspace / "wiggle room" for the twist of the joystick
-    	// EV 1/31/2015
-    	SmartDashboard.putNumber("Rotation Value After:", rotation);
-    	Robot.driveTrain.takeJoystickValueGyro(x, y, rotation, gyroAngle);
-    	// takes the new values and put them in for method
-    	// EV 1/16/2015 	
+    	RobotMap.driveTraingyro.reset();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

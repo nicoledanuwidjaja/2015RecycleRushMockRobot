@@ -143,7 +143,7 @@ public class RobotMap {
 
         driveTraingyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "gyro", driveTraingyro);
-        driveTraingyro.setSensitivity(0.007);
+        driveTraingyro.setSensitivity(0.012);
         driveTrainleftFrontEncoder = new Encoder(17, 18, false, EncodingType.k4X);
         LiveWindow.addSensor("DriveTrain", "leftFrontEncoder", driveTrainleftFrontEncoder);
         driveTrainleftFrontEncoder.setDistancePerPulse(1.0);

@@ -39,6 +39,7 @@ public class gatherTote extends CommandGroup {
     	
     	addSequential(new gathererDeploy());
     	addSequential(new gathererDown());
+    	addParallel(new rollyGrabbersGo());
     	addSequential(new gathererUp());
     	addParallel(new gathererRetract());
     	addSequential(new automatedElevator());
