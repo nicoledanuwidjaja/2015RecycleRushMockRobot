@@ -43,8 +43,8 @@ public class  DriveWithGyro extends Command {
     	double x = Robot.oi.driveJoystick.getX();
     	double y = Robot.oi.driveJoystick.getY();
     	double rotation = Robot.oi.driveJoystick.getZ();
-    	double gyroAngle = RobotMap.driveTraingyro.getAngle();
-    	SmartDashboard.putNumber("Gyro Angle Testing:", RobotMap.driveTraingyro.getAngle());
+    	double gyroAngle = RobotMap.driveTraingyro.getAngle() * 1.8;
+    	SmartDashboard.putNumber("Gyro Angle Testing:", gyroAngle);
     	
     	//double xinvert = x * -1.0;
     	//double yinvert = y * -1.0;

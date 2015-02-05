@@ -59,6 +59,7 @@ public class OI {
     public JoystickButton driveRight;
     public JoystickButton emergencyStop;
     public JoystickButton withoutGyroButton;
+    public JoystickButton withGyro;
     public JoystickButton resetGy;
     public Joystick driveJoystick;
     public JoystickButton buttonOneDispenseAtStep;
@@ -119,8 +120,10 @@ public class OI {
         
         resetGy = new JoystickButton(driveJoystick, 2);
         resetGy.whenPressed(new resetGyro());
-        withoutGyroButton = new JoystickButton(driveJoystick, 1);
-        withoutGyroButton.whileHeld(new DriveWithoutGyro());
+        withGyro = new JoystickButton(driveJoystick, 6);
+        withGyro.whenPressed(new DriveWithGyro());
+        withoutGyroButton = new JoystickButton(driveJoystick, 4);
+        withoutGyroButton.whenPressed(new DriveWithoutGyro());
         emergencyStop = new JoystickButton(driveJoystick, 10);
         emergencyStop.whenPressed(new DriveStopAuto());
         driveRight = new JoystickButton(driveJoystick, 12);
@@ -156,7 +159,7 @@ public class OI {
 
         SmartDashboard.putData("resetGyro", new resetGyro());
 
-        SmartDashboard.putData("alignTote", new alignTote());
+        //SmartDashboard.putData("alignTote", new alignTote());
 
         SmartDashboard.putData("automatedElevator", new automatedElevator());
 
