@@ -143,6 +143,10 @@ public class OI {
 
         SmartDashboard.putData("AutonGroup", new AutonGroup());
 
+        SmartDashboard.putData("DriveTurnAroundAuton", new DriveTurnAroundAuton());
+
+        SmartDashboard.putData("DriveTurnNinetyDegreesAuton", new DriveTurnNinetyDegreesAuton());
+
         SmartDashboard.putData("DriveWithGyro", new DriveWithGyro());
 
         SmartDashboard.putData("DriveWithoutGyro", new DriveWithoutGyro());
@@ -159,7 +163,7 @@ public class OI {
 
         SmartDashboard.putData("resetGyro", new resetGyro());
 
-        //SmartDashboard.putData("alignTote", new alignTote());
+        SmartDashboard.putData("alignTote", new alignTote());
 
         SmartDashboard.putData("automatedElevator", new automatedElevator());
 
@@ -192,6 +196,8 @@ public class OI {
         SmartDashboard.putData("resetToteCycle", new resetToteCycle());
 
         SmartDashboard.putData("elevatorGoToStepLevel", new elevatorGoToStepLevel());
+
+        SmartDashboard.putData("proximitySensorTest", new proximitySensorTest());
 
         SmartDashboard.putData("elevatorGoToGroundLevel", new elevatorGoToGroundLevel());
 

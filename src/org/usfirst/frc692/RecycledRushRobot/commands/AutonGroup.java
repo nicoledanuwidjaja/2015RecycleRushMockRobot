@@ -10,7 +10,11 @@
 
 
 package org.usfirst.frc692.RecycledRushRobot.commands;
+import org.usfirst.frc692.RecycledRushRobot.Robot;
+import org.usfirst.frc692.RecycledRushRobot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -36,9 +40,11 @@ public class AutonGroup extends CommandGroup {
         // arm.
     	addSequential(new recycleBinClawBottom());
     	addSequential(new recycleBinClawUp());
-    	//turn 180
-    	addSequential(new DriveForwardAuto());
-    	//move forward
+    	addSequential(new DriveTurnAroundAuton());
+    	// drive back without gyro
+    	addSequential(new gatherTote());
+    	//addSequential(new DriveTurnNinetyDegreesAuton());
+    	//addSequential(new DriveForwardAuto());
     	
     }
     /*
