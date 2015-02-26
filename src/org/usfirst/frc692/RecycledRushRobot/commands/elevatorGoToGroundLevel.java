@@ -59,7 +59,7 @@ public class  elevatorGoToGroundLevel extends Command {
     protected boolean isFinished() {
         if(Robot.elevator.onGroundFloor())
         {
-        	Robot.elevator.setDonePosition();
+        	Robot.elevator.setGroundPosition();
         	System.out.println("Elevator on ground floor!");
         	System.out.println("Elevator stopping!");
         	return true;

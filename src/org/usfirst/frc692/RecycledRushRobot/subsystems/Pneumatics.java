@@ -41,7 +41,7 @@ public class Pneumatics extends Subsystem {
     }
     public void compressorOneStart()
     {
-    	compressorOne.start();   	
+    	//compressorOne.start();   	
     }
     // creates a start method for the compressor (starts pneumatic compressor)
     // AC 1/12/15

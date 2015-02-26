@@ -34,11 +34,12 @@ public class dispenseTotesAtGround extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    
     	
-    	addSequential(new backstopDown());
+    	addSequential(new elevatorGoToStepLevel());
     	addSequential(new flapping());
     	addSequential(new elevatorGoToGroundLevel());
-    	addSequential(new bringOutToteOnCaterpillar());
+    	addSequential(new bringInToteOnCaterpillar());
     	// brings backstop out of the way and tote is dispensed at the ground level
     	addSequential(new resetToteCycle());
     }

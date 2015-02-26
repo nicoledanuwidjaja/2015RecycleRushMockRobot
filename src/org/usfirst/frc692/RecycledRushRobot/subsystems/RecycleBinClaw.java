@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -77,12 +78,13 @@ public class RecycleBinClaw extends Subsystem {
     {
     	if(recycleBinDropLimit.get() == true)
     	{
-    		return true;
+    		SmartDashboard.putString("Recycle Drop Limit Switch:", "true");
     	}
     	else
     	{
-    		return false;
+    		SmartDashboard.putString("Recycle Drop Limit Switch:", "false");
     	}
+    	return recycleBinDropLimit.get();
     }
     /* 
      * indicates when recycle bin can be dropped

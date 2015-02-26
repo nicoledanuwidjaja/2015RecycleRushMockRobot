@@ -31,11 +31,18 @@ public class  elevatorDownWithoutLimitSwitch extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.elevatorDown();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	if(!Robot.elevator.onGroundFloor())
+    	{
+    		Robot.elevator.elevatorDown();
+    	}
+    	else
+    	{
+    		Robot.elevator.elevatorStop();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -45,7 +52,6 @@ public class  elevatorDownWithoutLimitSwitch extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.elevator.elevatorStop();
     }
 
     // Called when another command which requires one or more of the same

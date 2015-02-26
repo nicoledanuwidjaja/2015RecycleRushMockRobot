@@ -41,7 +41,7 @@ public class  rollyGrabbersGo extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.gatherer.toteDetector())
+        /*if(Robot.gatherer.toteDetector())
         {
         	return true;
         }
@@ -49,19 +49,22 @@ public class  rollyGrabbersGo extends Command {
         {
         	return false;
         }
+        */
+    	return true;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.rollyGrabber.rollyGrabberStop();
+    	//Robot.rollyGrabber.rollyGrabberStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	while(!Robot.gatherer.toteDetector())
+    	/*while(!Robot.gatherer.toteDetector())
     	{
     		Robot.rollyGrabber.rollyGrabberGo();
     	}
+    	*/
     }
 }

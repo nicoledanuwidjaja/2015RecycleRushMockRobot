@@ -35,10 +35,9 @@ public class  caterpillarControlWithJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double value = Robot.oi.getoperatorStickTwo().getX();
+    	double value = Robot.oi.autoStick.getY();
     	
-    	double oppositeValue = value * -1.0;
-    	Robot.caterpillar.takeJoystickAxisValue(oppositeValue);
+    	Robot.caterpillar.takeJoystickAxisValue(value);
     }
 
     // Make this return true when this Command no longer needs to run execute()

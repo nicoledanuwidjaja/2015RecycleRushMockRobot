@@ -38,7 +38,7 @@ public class automatedElevator extends CommandGroup {
         // arm.
     	if(Robot.gatherer.toteDetector())
     	{
-    		addSequential(new bringInToteOnCaterpillar());
+    		//addSequential(new bringInToteOnCaterpillar());
     		addSequential(new elevatorGoToTopLevel());
     		addSequential(new elevatorGoToGroundLevel());
     	}

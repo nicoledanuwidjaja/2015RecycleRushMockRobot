@@ -42,7 +42,7 @@ public class RollyGrabber extends Subsystem {
     }
     public void takeJoystickAxisValue(double x)
     {
-    	rollyGrabberMotorOne.set(x);
+    	rollyGrabberMotorOne.set(-x);
     	rollyGrabberMotorTwo.set(x);
     }
     // takes value from joystick and inputs in rolly grabber motors
@@ -50,8 +50,8 @@ public class RollyGrabber extends Subsystem {
     
     public void rollyGrabberGo()
     {
-    	rollyGrabberMotorOne.set(1.0);
-    	rollyGrabberMotorTwo.set(1.0);
+    	rollyGrabberMotorOne.set(-0.75);
+    	rollyGrabberMotorTwo.set(0.75);
     }
     // sets sets rolly grabber motors at full power
     // AC 1/31/15

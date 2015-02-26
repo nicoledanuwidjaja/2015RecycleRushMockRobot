@@ -42,8 +42,7 @@ public class AutonGroup extends CommandGroup {
     	addSequential(new recycleBinClawUp());
     	addSequential(new DriveTurnAroundAuton());
     	// drive back without gyro
-    	addSequential(new gatherTote());
-    	//addSequential(new DriveTurnNinetyDegreesAuton());
+    	addSequential(new DriveTurnNinetyDegreesAuton());
     	//addSequential(new DriveForwardAuto());
     	
     }

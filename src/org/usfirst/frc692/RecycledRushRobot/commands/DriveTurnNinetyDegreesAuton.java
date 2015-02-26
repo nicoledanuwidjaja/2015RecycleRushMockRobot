@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc692.RecycledRushRobot.Robot;
+import org.usfirst.frc692.RecycledRushRobot.RobotConstant;
 import org.usfirst.frc692.RecycledRushRobot.RobotMap;
 
 /**
@@ -38,10 +39,10 @@ public class  DriveTurnNinetyDegreesAuton extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        while (RobotMap.driveTraingyro.getAngle() * RobotMap.GyroMultiplier < 230)
+        while (RobotMap.driveTraingyro.getAngle() * RobotConstant.GyroMultiplier < 235)
         {
         	Robot.driveTrain.takeJoystickValueGyro(0.0, 0.0, -0.4, 0.0);
-        	SmartDashboard.putNumber("Gyro Angle for Auton:", RobotMap.driveTraingyro.getAngle() * RobotMap.GyroMultiplier);
+        	SmartDashboard.putNumber("Gyro Angle for Auton:", RobotMap.driveTraingyro.getAngle() * RobotConstant.GyroMultiplier);
         	// turn an extra 90 degrees to face the front
         }
        	try {
@@ -50,7 +51,7 @@ public class  DriveTurnNinetyDegreesAuton extends Command {
    			// TODO Auto-generated catch block
    			e.printStackTrace();
    		}
-       	SmartDashboard.putNumber("Gyro Angle for Auton AFTER:", RobotMap.driveTraingyro.getAngle() * RobotMap.GyroMultiplier);
+       	SmartDashboard.putNumber("Gyro Angle for Auton AFTER:", RobotMap.driveTraingyro.getAngle() * RobotConstant.GyroMultiplier);
     }
 
     // Make this return true when this Command no longer needs to run execute()

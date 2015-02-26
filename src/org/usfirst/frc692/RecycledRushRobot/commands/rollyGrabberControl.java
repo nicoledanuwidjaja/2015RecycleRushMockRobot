@@ -35,7 +35,8 @@ public class  rollyGrabberControl extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double value = Robot.oi.operatorStickOne.getY();
+    	double value = Robot.oi.autoStick.getY();
+    	//CHANGE THIS LATER
     	
     	double oppositeValue = value * -1.0;
     	Robot.rollyGrabber.takeJoystickAxisValue(oppositeValue);

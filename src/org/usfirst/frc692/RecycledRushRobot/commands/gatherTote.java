@@ -10,8 +10,6 @@
 
 
 package org.usfirst.frc692.RecycledRushRobot.commands;
-
-
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -36,12 +34,7 @@ public class gatherTote extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	
-    	addSequential(new gathererDeploy());
-    	addSequential(new gathererDown());
-    	addParallel(new rollyGrabbersGo());
-    	addSequential(new gathererUp());
-    	addParallel(new gathererRetract());
+    	addSequential(new bringInToteOnCaterpillar());
     	addSequential(new automatedElevator());
     }
 }

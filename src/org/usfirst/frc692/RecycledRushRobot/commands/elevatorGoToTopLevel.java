@@ -55,7 +55,6 @@ public class  elevatorGoToTopLevel extends Command {
     protected boolean isFinished() {
         if(Robot.elevator.onTopLoadLevel())
         {
-        	Robot.elevator.setDonePosition();
         	System.out.println("Elevator on top floor!");
         	System.out.println("Stopping!");
         	return true;

@@ -35,10 +35,9 @@ public class dispenseAtStep extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	
-    	addSequential(new backstopDown());
-    	addSequential(new flapping());
     	addSequential(new elevatorGoToStepLevel());
-    	addSequential(new bringOutToteOnCaterpillar());
+    	addSequential(new flapping());
+    	addSequential(new bringInToteOnCaterpillar());
     	//brings backstop out of the way and tote is dispensed at the ground level
     	addSequential(new resetToteCycle());
     }

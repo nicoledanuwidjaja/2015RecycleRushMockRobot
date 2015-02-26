@@ -35,40 +35,20 @@ public class  bringInToteOnCaterpillar extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.gatherer.isGathererReadyToRetract())
-    	{
     		Robot.caterpillar.caterpillarForward();
-    		System.out.println("Caterpillar activated!");
-    	}
-    	else
-    	{
-    		Robot.caterpillar.caterpillarStop();
-    		System.out.println("Caterpillar is not active.");
-    		System.out.println("Caterpillar is stopped");
-    		
-    	}
-    	/*
-    	 * when gatherer is retracting the caterpillar activates
-    	 * AC 1/24/15
-    	 */
+    		Robot.rollyGrabber.rollyGrabberGo();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.gatherer.toteDetector())
-        {
-        	System.out.println("Tote is fully loaded!");
-        	return true;
-        }
-        else
-        {
-        	return false;
-        }
+        return Robot.gatherer.toteDetector();
+        
     }
 
     // Called once after isFinished returns true
     protected void end() {
     	Robot.caterpillar.caterpillarStop();
+    	Robot.rollyGrabber.rollyGrabberStop();
     }
     
     // Called when another command which requires one or more of the same
@@ -77,6 +57,7 @@ public class  bringInToteOnCaterpillar extends Command {
     	while(!Robot.gatherer.toteDetector())
     	{
     		Robot.caterpillar.caterpillarForward();
+    		Robot.rollyGrabber.rollyGrabberGo();
     	}
     }
     // caterpillar takes in tote and stops when the tote is fully loaded

@@ -77,6 +77,13 @@ public class DriveTrain extends Subsystem {
     // made a constructor to get values of joystick to drive in one direction WITH GYRO
     // EV 1/15/2015
     
+    public void resetEncoders() {
+    	leftFrontEncoder.reset();
+    	leftBackEncoder.reset();
+    	rightFrontEncoder.reset();
+    	rightBackEncoder.reset();
+    }
+    
     public int getLeftFrontEncoderCount() {
     	return leftFrontEncoder.get();
     }

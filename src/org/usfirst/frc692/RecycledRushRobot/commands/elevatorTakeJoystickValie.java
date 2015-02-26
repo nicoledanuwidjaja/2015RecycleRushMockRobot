@@ -35,10 +35,12 @@ public class  elevatorTakeJoystickValie extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double value = Robot.oi.operatorStickTwo.getY();
-    	
+    	double value = Robot.oi.manualStick.getY();
     	double oppositeValue = value * -1.0;
+    	
+    	
     	Robot.elevator.takeJoystickValue(oppositeValue);
+    	
     }
     //takes joystick value and inputs into elevator
     //AC 1/24/15

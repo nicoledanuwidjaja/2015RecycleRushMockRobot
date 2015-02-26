@@ -63,7 +63,6 @@ public class  elevatorGoToStepLevel extends Command {
     protected boolean isFinished() {
         if(Robot.elevator.onStepLevel())
         {
-        	Robot.elevator.setDonePosition();
         	System.out.println("Elevator on step floor!");
         	System.out.println("Elevator stopping!");
         	return true;
