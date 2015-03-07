@@ -12,15 +12,14 @@
 package org.usfirst.frc692.RecycledRushRobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-
 import org.usfirst.frc692.RecycledRushRobot.Robot;
 
 /**
  *
  */
-public class  DriveWithoutGyro extends Command {
+public class  AutonDriveBackward extends Command {
 
-    public DriveWithoutGyro() {
+    public AutonDriveBackward() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -32,33 +31,22 @@ public class  DriveWithoutGyro extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	setTimeout(3.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double x = Robot.oi.driveJoystick.getX();
-    	double y = Robot.oi.driveJoystick.getY();
-    	double rotation = Robot.oi.driveJoystick.getZ();
-    	double gyroAngle = 0.0;
-    	
-    	double xinvert = x * -1.0;
-    	double yinvert = y * -1.0;
-    	double zinvert = rotation * -1.0;
-    	//made inverted variables just in case
-    	//EV 1/16/2015
-    	
-    	Robot.driveTrain.takeJoystickValueGyro(xinvert, yinvert, zinvert, gyroAngle);
-    	// takes the new values and put them in for method
-    	// EV 1/16/2015
+    	Robot.driveTrain.moveBackward();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.driveTrain.stopDrive();
     }
 
     // Called when another command which requires one or more of the same

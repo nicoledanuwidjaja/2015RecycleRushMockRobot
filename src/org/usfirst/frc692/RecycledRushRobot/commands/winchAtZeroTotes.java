@@ -31,27 +31,17 @@ public class  winchAtZeroTotes extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	setTimeout(0.5);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	while(Robot.recycleBinClaw.getRawCount() > 0)
-    		//0 is ground
-    	{
-    		Robot.recycleBinClaw.winchDown();
-    	}
+    	Robot.recycleBinClaw.winchDown();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.recycleBinClaw.getRawCount() == 0.0)
-        {
-        	return true;
-        }
-        else
-        {
-        	return false;
-        }
+       return isTimedOut();
     }
 
     // Called once after isFinished returns true
@@ -62,10 +52,7 @@ public class  winchAtZeroTotes extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	while(Robot.recycleBinClaw.getRawCount() != 0.0)
-    	{
-    		Robot.recycleBinClaw.winchDown();
-    	}
+    	
     }
     /*
      * winch goes down to bottom

@@ -31,30 +31,17 @@ public class  recycleBinClawBottom extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	setTimeout(7.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.recycleBinClaw.getRawCount() > 0.0)
-    	{
-    		Robot.recycleBinClaw.winchDown();
-    	}
-    	else
-    	{
-    		Robot.recycleBinClaw.winchStop();
-    	}
+    	Robot.recycleBinClaw.winchDown();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.recycleBinClaw.getRawCount() == 0.0)
-        {
-        	return true;
-        }
-        else
-        {
-        	return false;
-        }
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true

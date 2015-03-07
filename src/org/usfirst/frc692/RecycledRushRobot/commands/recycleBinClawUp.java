@@ -31,6 +31,7 @@ public class  recycleBinClawUp extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	setTimeout(7.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -41,26 +42,12 @@ public class  recycleBinClawUp extends Command {
     	 * copied from 1678 code no github
     	 * AC 1/17/15
     	 */
-    	if(Robot.recycleBinClaw.getRawCount() < 390)
-    	{
-    		Robot.recycleBinClaw.winchUp();
-    	}
-    	else
-    	{
-    		Robot.recycleBinClaw.winchStop();
-    	}
+    	Robot.recycleBinClaw.winchUp();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-       if(Robot.recycleBinClaw.getRawCount() == 0.0)
-       {
-    	   return true;
-       }
-       else 
-       {
-    	   return false;
-       }
+       return isTimedOut();
     }
     // if recycle bin claw is on top level, then command stops
     // ND 1/17/15

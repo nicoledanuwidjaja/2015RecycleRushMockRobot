@@ -97,7 +97,7 @@ public class Elevator extends Subsystem {
     
     public boolean isMovingDown()
     {
-    	if (elevatorState == -1)
+    	if(elevatorState == -1)
     	{
     		return true;
     	}
@@ -112,7 +112,8 @@ public class Elevator extends Subsystem {
     
     public void releaseFlap()
     {
-    	flapperRelease.set(Value.kForward);
+    	//flapperRelease.set(Value.kForward);
+    	flapperRelease.set(Value.kReverse);
     }
     // causes flapper to release totes
     // EV 1/15/2015
@@ -124,6 +125,12 @@ public class Elevator extends Subsystem {
     //air is turned off on flapper
     //flapper can now reset itself
     //AC 2/16/15
+    
+    public void forwardFlap()
+    {
+    	flapperRelease.set(Value.kForward);
+    }
+    
     
     public boolean onGroundFloor()
     {
@@ -222,6 +229,6 @@ public class Elevator extends Subsystem {
     		elevatorPlatformUpDownMotor.set(x);
     	}
     }
-    //takes value from joystick and inputs in elevator motor\
+    //takes value from joystick and inputs in elevator motor
     //AC 1/24/15  
 }

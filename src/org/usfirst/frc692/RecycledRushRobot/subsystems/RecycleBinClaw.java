@@ -91,7 +91,7 @@ public class RecycleBinClaw extends Subsystem {
      * if pressed returns true
      * AC 1/17/15
      */
-    
+    /*
     public int getEncoderCount()
     {
     	return recycleBinClawEncoder.get();
@@ -141,6 +141,8 @@ public class RecycleBinClaw extends Subsystem {
     }
     // if encoder has stopped counting return true
     // AC 1/24/15
+     * 
+     */
     
     public void winchStop()
     {
@@ -148,6 +150,7 @@ public class RecycleBinClaw extends Subsystem {
     }
     // stops winch motor
     // AC 1/24/15
+   
     
 }
 

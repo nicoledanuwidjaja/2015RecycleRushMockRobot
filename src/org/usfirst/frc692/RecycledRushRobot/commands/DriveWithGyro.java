@@ -35,8 +35,8 @@ public class  DriveWithGyro extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//RobotMap.driveTraingyro.reset();
-    	//SmartDashboard.putNumber("Gyro Angle Init:", RobotMap.driveTraingyro.getAngle());
+    	RobotMap.driveTraingyro.reset();
+    	SmartDashboard.putNumber("Gyro Angle Init:", RobotMap.driveTraingyro.getAngle());
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -45,15 +45,15 @@ public class  DriveWithGyro extends Command {
     	double y = Robot.oi.driveJoystick.getY();
     	double rotation = Robot.oi.driveJoystick.getZ() * 0.5;
     	double gyroAngle = RobotMap.driveTraingyro.getAngle() * (RobotConstant.GyroMultiplier * -1.0);
-    	//SmartDashboard.putNumber("Gyro Angle Testing:", gyroAngle);
-    	//SmartDashboard.putNumber("Rotation Value:", Robot.oi.driveJoystick.getZ());
+    	SmartDashboard.putNumber("Gyro Angle Testing:", gyroAngle);
+    	SmartDashboard.putNumber("Rotation Value:", Robot.oi.driveJoystick.getZ());
     	
-    	//double xinvert = x * -1.0;
-    	//double yinvert = y * -1.0;
-    	//double zinvert = rotation * -1.0;
+    	double xinvert = x * -1.0;
+    	double yinvert = y * -1.0;
+    	double zinvert = rotation * -1.0;
     	//made inverted variables just in case
     	//EV 1/16/2015
-    	//SmartDashboard.putNumber("Rotation Value Before:", rotation);
+    	SmartDashboard.putNumber("Rotation Value Before:", rotation);
     	/*
     	if (rotation >= 0.0 && rotation < 0.3)
     		rotation = 0.0;
@@ -68,8 +68,8 @@ public class  DriveWithGyro extends Command {
     		*/
     	// creates a deadspace / "wiggle room" for the twist of the joystick
     	// EV 1/31/2015
-    	//SmartDashboard.putNumber("Rotation Value After:", rotation);
-    	Robot.driveTrain.takeJoystickValueGyro(x, y, rotation, gyroAngle);
+    	SmartDashboard.putNumber("Rotation Value After:", rotation);
+    	Robot.driveTrain.takeJoystickValueGyro(xinvert, yinvert, zinvert, gyroAngle);
     	// takes the new values and put them in for method
     	// EV 1/16/2015 	
     }
