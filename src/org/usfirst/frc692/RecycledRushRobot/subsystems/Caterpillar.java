@@ -11,10 +11,11 @@
 
 package org.usfirst.frc692.RecycledRushRobot.subsystems;
 
+import org.usfirst.frc692.RecycledRushRobot.Robot;
 import org.usfirst.frc692.RecycledRushRobot.RobotMap;
 import org.usfirst.frc692.RecycledRushRobot.commands.*;
-import edu.wpi.first.wpilibj.*;
 
+import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -43,8 +44,8 @@ public class Caterpillar extends Subsystem {
     }
     public void caterpillarForward()
     {
-    	caterpillarBelt.set(0.5);
-    	caterpillarBeltTwo.set(0.5);
+    	caterpillarBelt.set(0.7);
+    	caterpillarBeltTwo.set(0.7);
     }
     // sets caterpillar belt at 25% power in the forward direction 
     // tentative value may be changed later
@@ -52,8 +53,8 @@ public class Caterpillar extends Subsystem {
     
     public void caterpillarReverse()
     {
-    	caterpillarBelt.set(-0.5);
-    	caterpillarBeltTwo.set(-0.5);
+    	caterpillarBelt.set(-0.7);
+    	caterpillarBeltTwo.set(-0.7);
     }
     // sets caterpillar belt at 25% power in the reverse direction 
     // also a tentative value -- subject to change
@@ -69,8 +70,22 @@ public class Caterpillar extends Subsystem {
     
     public void takeJoystickAxisValue(double x)
     {
+    	if(Robot.gatherer.toteDetector())
+    	{
     	caterpillarBelt.set(x);
     	caterpillarBeltTwo.set(x);
+    	}
+    	else
+    	{
+    		caterpillarBelt.set(0.0);
+    		caterpillarBeltTwo.set(0.0);
+    	}
+    }
+    
+    public void discardTote(double y)
+    {
+    	caterpillarBelt.set(y);
+    	caterpillarBeltTwo.set(y);
     }
     //takes value of the joystick and inputs it into the caterpillar belt motor
     //AC 1/24/15

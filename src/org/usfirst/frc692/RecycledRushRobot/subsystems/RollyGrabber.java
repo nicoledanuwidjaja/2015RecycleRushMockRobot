@@ -61,5 +61,11 @@ public class RollyGrabber extends Subsystem {
     	rollyGrabberMotorOne.set(0.0);
     	rollyGrabberMotorTwo.set(0.0);
     }
+    
+    public void rollyGrabberReverse()
+    {
+    	rollyGrabberMotorOne.set(0.75);
+    	rollyGrabberMotorTwo.set(-0.75);
+    }
 }
 

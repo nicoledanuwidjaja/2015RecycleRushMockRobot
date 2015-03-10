@@ -41,7 +41,14 @@ public class  bringInToteOnCaterpillar extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.gatherer.toteDetector();
+        if(!Robot.gatherer.toteDetector())
+        {
+        	return true;
+        }
+        else
+        {
+        	return false;
+        }
         
     }
 

@@ -14,7 +14,8 @@ package org.usfirst.frc692.RecycledRushRobot.subsystems;
 import org.usfirst.frc692.RecycledRushRobot.RobotMap;
 import org.usfirst.frc692.RecycledRushRobot.commands.*;
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType; import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType; 
+import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -52,11 +53,11 @@ public class DriveTrain extends Subsystem {
     }
     
     public void moveForward() {
-    	robotDrive.mecanumDrive_Cartesian(0.0, 1.0, 0.0, 0.0);
+    	robotDrive.mecanumDrive_Cartesian(0.0, 0.3, 0.0, 0.0);
     }
     
     public void moveBackward() {
-    	robotDrive.mecanumDrive_Cartesian(0.0, -1.0, 0.0, 0.0);
+    	robotDrive.mecanumDrive_Cartesian(0.0, -0.3, 0.0, 0.0);
     }
     
     public void moveLeft() {
