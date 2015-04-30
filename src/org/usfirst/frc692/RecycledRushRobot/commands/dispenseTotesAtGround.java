@@ -37,10 +37,11 @@ public class dispenseTotesAtGround extends CommandGroup {
     
     	
     	addSequential(new elevatorGoToStepLevel());
+    	addSequential(new waitInput(1.0));
     	addSequential(new flapping());
     	addSequential(new elevatorGoToGroundLevel());
-    	addSequential(new bringInToteOnCaterpillar());
+    	//addSequential(new bringInToteOnCaterpillar());
     	// brings backstop out of the way and tote is dispensed at the ground level
-    	addSequential(new resetToteCycle());
+    	//addSequential(new resetToteCycle());
     }
 }

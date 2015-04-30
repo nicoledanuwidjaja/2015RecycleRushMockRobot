@@ -30,17 +30,18 @@ public class  gatherAndCaterpillarInWithSensor extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.rollyGrabber.rollyGrabberGo();
-    	Robot.caterpillar.caterpillarForward();
+    
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.rollyGrabber.rollyGrabberGo();
+    	Robot.caterpillar.caterpillarForward();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(!Robot.gatherer.toteDetector())
+        if(!Robot.gatherer.toteDetector() || Robot.oi.autoStick.getRawButton(2))
         {
         	return true;
         }
@@ -52,10 +53,13 @@ public class  gatherAndCaterpillarInWithSensor extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.rollyGrabber.rollyGrabberStop();
+    	Robot.caterpillar.caterpillarStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }

@@ -35,19 +35,20 @@ public class  elevatorGoToTopLevel extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.elevator.onStepLevel())
-    	{
-    		Robot.elevator.elevatorUp();
-    		Robot.elevator.setElevatorMovingUp();
-    		System.out.println("Elevator on step level!");
-    		System.out.println("Going up to top level");
-    	}
-    	else if(Robot.elevator.onGroundFloor())
+    	if(Robot.elevator.onGroundFloor())
     	{
     		Robot.elevator.elevatorUp();
     		Robot.elevator.setElevatorMovingUp();
     		System.out.println("Elevator on ground fllor!");
     		System.out.println("Going up to top level!");
+    	}
+    	else if(Robot.elevator.onStepLevel())
+    	{
+    		
+    		Robot.elevator.elevatorUp();
+    		Robot.elevator.setElevatorMovingUp();
+    		System.out.println("Elevator on step level!");
+    		System.out.println("Going up to top level");
     	}
     }
 

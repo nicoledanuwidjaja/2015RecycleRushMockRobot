@@ -36,12 +36,14 @@ public class automatedElevator extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	if(Robot.gatherer.toteDetector())
-    	{
-    		//addSequential(new bringInToteOnCaterpillar());
+    	//if(!Robot.gatherer.toteDetector())
+    	//{
     		addSequential(new elevatorGoToTopLevel());
+    		addSequential(new waitInput(1.0));
     		addSequential(new elevatorGoToGroundLevel());
-    	}
+    	//}
+    	//maybe run conveyor belt back
+    	
     	//caterpillar becomes activated when tote detector is pressed
     	//elevator goes to top level and then goes down 
     	//AC 1/24/15

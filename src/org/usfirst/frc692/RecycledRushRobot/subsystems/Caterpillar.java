@@ -44,8 +44,8 @@ public class Caterpillar extends Subsystem {
     }
     public void caterpillarForward()
     {
-    	caterpillarBelt.set(0.7);
-    	caterpillarBeltTwo.set(0.7);
+    	caterpillarBelt.set(1.0);
+    	caterpillarBeltTwo.set(1.0);
     }
     // sets caterpillar belt at 25% power in the forward direction 
     // tentative value may be changed later
@@ -53,17 +53,16 @@ public class Caterpillar extends Subsystem {
     
     public void caterpillarReverse()
     {
-    	caterpillarBelt.set(-0.7);
-    	caterpillarBeltTwo.set(-0.7);
+    	caterpillarBelt.set(-1.0);
+    	caterpillarBeltTwo.set(-1.0);
     }
     // sets caterpillar belt at 25% power in the reverse direction 
     // also a tentative value -- subject to change
     // AC 1/15/15
     
-    public void caterpillarStop()
-    {
-    	caterpillarBelt.set(0.0);
-    	caterpillarBeltTwo.set(0.0);
+    public void caterpillarStop() {
+    		caterpillarBelt.set(0.0);
+    		caterpillarBeltTwo.set(0.0);
     }
     // sets caterpillar belt to stop 
     // ND 1/16/15

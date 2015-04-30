@@ -72,6 +72,9 @@ public class  elevatorGoToStepLevel extends Command {
         	return false;
         }
     }
+    //if boolen is switched change true to false and vice versa
+    //OR put a "!" before Robot.elevator.onStepLevel() 
+    // :)
 
     // Called once after isFinished returns true
     protected void end() {

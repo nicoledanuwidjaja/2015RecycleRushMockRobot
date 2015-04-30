@@ -17,9 +17,9 @@ import org.usfirst.frc692.RecycledRushRobot.Robot;
 /**
  *
  */
-public class  elevatorTakeJoystickValie extends Command {
+public class  takeJoystickValueSlowDownDown extends Command {
 
-    public elevatorTakeJoystickValie() {
+    public takeJoystickValueSlowDownDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -35,14 +35,11 @@ public class  elevatorTakeJoystickValie extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double value = Robot.oi.manualStick.getY();
+       	double value = Robot.oi.manualStick.getY();
     	double oppositeValue = value * -1.0;
     	
-    	Robot.elevator.takeJoystickValue(oppositeValue);
-    	
+    	Robot.elevator.slowDownElevatorDown(oppositeValue);
     }
-    //takes joystick value and inputs into elevator
-    //AC 1/24/15
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

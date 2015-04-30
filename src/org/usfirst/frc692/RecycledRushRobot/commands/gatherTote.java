@@ -34,7 +34,8 @@ public class gatherTote extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addSequential(new bringInToteOnCaterpillar());
+    	addSequential(new gatherAndCaterpillarInWithSensor());
+    	addSequential(new waitInput(0.1));
     	addSequential(new automatedElevator());
     }
 }

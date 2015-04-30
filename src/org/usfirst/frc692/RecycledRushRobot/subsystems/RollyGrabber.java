@@ -11,10 +11,11 @@
 
 package org.usfirst.frc692.RecycledRushRobot.subsystems;
 
+import org.usfirst.frc692.RecycledRushRobot.Robot;
 import org.usfirst.frc692.RecycledRushRobot.RobotMap;
 import org.usfirst.frc692.RecycledRushRobot.commands.*;
-import edu.wpi.first.wpilibj.*;
 
+import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -50,8 +51,8 @@ public class RollyGrabber extends Subsystem {
     
     public void rollyGrabberGo()
     {
-    	rollyGrabberMotorOne.set(-0.75);
-    	rollyGrabberMotorTwo.set(0.75);
+    	rollyGrabberMotorOne.set(-1.0);
+    	rollyGrabberMotorTwo.set(1.0);
     }
     // sets sets rolly grabber motors at full power
     // AC 1/31/15
@@ -64,8 +65,8 @@ public class RollyGrabber extends Subsystem {
     
     public void rollyGrabberReverse()
     {
-    	rollyGrabberMotorOne.set(0.75);
-    	rollyGrabberMotorTwo.set(-0.75);
+    	rollyGrabberMotorOne.set(1.0);
+    	rollyGrabberMotorTwo.set(-1.0);
     }
 }
 

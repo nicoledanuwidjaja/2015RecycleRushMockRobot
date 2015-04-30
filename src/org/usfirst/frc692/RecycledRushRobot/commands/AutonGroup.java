@@ -37,17 +37,15 @@ public class AutonGroup extends CommandGroup {
         // would require.
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
-        // arm.
-    	addSequential(new recycleBinClawBottom());
-    	addSequential(new recycleBinClawUp());
+        // rm.
     	addSequential(new DriveTurnAroundAuton());
     	// drive back without gyro
     	addSequential(new DriveTurnNinetyDegreesAuton());
-    	//addSequential(new DriveForwardAuto());
+    	addSequential(new AutonDriveBackward());
     	
     }
     /*
-     * start with claw at bottom of traschan 
+     * start with claw at bottom of trash can 
      * pick up trash can 
      * turn 180 degrees
      * move forward

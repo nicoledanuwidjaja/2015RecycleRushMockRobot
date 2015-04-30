@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class resetToteCycle extends CommandGroup {
+public class gatherInAndCatCommand extends CommandGroup {
     
-    public  resetToteCycle() {
+    public  gatherInAndCatCommand() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -34,5 +34,7 @@ public class resetToteCycle extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	addParallel(new caterpillarForward());
+    	addParallel(new rollyGrabbersGo());
     }
 }

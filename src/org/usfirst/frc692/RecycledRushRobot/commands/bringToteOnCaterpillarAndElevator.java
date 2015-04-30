@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class resetToteCycle extends CommandGroup {
+public class bringToteOnCaterpillarAndElevator extends CommandGroup {
     
-    public  resetToteCycle() {
+    public  bringToteOnCaterpillarAndElevator() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
